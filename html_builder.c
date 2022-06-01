@@ -2,6 +2,13 @@
 #include <string.h>
 #include <stdlib.h>
 
+/*
+  TODO:
+  add commants
+  clean IF statement
+  change the html syntax so it would be more safe to use the program
+*/
+
 // typedef struct text_block {
 //   char* name;
 //   char* path;
@@ -29,7 +36,6 @@ char* read_block(char* path) {
 
 int main(int argc, char const *argv[]) {
   printf("<!DOCTYPE html>\n\r");
-  // printf("%s\n", getenv("DOCUMENT_ROOT"));
   char configAddress[64] = "/etc/html-blocks/";
   const char extention[] = ".html";
   char *endOfPath;
@@ -41,24 +47,18 @@ int main(int argc, char const *argv[]) {
   int endOfLine = 1;
   int keyWordLen;
 
-  //  const char toRoot[] = "../";
+  //  const char toRoot[] = "../"; --> for local debuginf porposes
   if ((address = malloc(sizeof(char) * (
   strlen(getenv("SCRIPT_NAME")) + strlen(getenv("DOCUMENT_ROOT") + 1)
   ))) != NULL) {
     address[0] = '\0';
     strcat(address, getenv("DOCUMENT_ROOT"));
-      // perror("failed to append root");
-      // exit(4);
-    // }
     strcat(address, getenv("SCRIPT_NAME"));
-    //   perror("failed to append html_dir");
-    //   exit(4);
-    // }
   } else {
     perror("failed to allocate memory");
     return 3;
   }
-  // printf("%s\n", address);
+  // printf("%s\n", address); --> for local debuginf porposes
 
   char line[256];
   FILE* subject = fopen(address, "r");
@@ -72,6 +72,7 @@ int main(int argc, char const *argv[]) {
     if (fgets(line, 256, subject) == NULL) {
       endOfLine = 0;
     } else {
+      // TODO: clean this IF statement and make it more efficient
       if ( strstr(line, "<!--") &&
         strstr(line, "@@") &&
         strstr(line, "-->") &&
