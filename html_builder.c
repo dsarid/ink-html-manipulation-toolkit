@@ -35,7 +35,7 @@ char* read_block(char* path) {
 
 
 int main(int argc, char const *argv[]) {
-  printf("<!DOCTYPE html>\n\r");
+  printf("Content-type: text/html\n\r\n\r");
   char configAddress[64] = "/etc/html-blocks/";
   const char extention[] = ".html";
   char *endOfPath;
