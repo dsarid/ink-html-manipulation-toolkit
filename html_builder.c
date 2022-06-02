@@ -3,13 +3,12 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
 
- You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>. 
+ You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
 
 /*
   TODO:
@@ -56,7 +55,7 @@ int main(int argc, char const *argv[]) {
   int endOfLine = 1;
   int keyWordLen;
 
-  //  const char toRoot[] = "../"; --> for local debuginf porposes
+  //  const char toRoot[] = "../"; --> for local debuginf purposes
   if ((address = malloc(sizeof(char) * (
   strlen(getenv("SCRIPT_NAME")) + strlen(getenv("DOCUMENT_ROOT") + 1)
   ))) != NULL) {
@@ -67,7 +66,7 @@ int main(int argc, char const *argv[]) {
     perror("failed to allocate memory");
     return 3;
   }
-  // printf("%s\n", address); --> for local debuginf porposes
+  // printf("%s\n", address); --> for local debuginf purposes
 
   char line[256];
   FILE* subject = fopen(address, "r");
