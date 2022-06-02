@@ -1,5 +1,5 @@
 
-# Ink Html Manipulation Toolkit
+# Ink HTML Manipulation Toolkit
 
 ## Description
 A  package of programs for server-side usage, made in c and cgi.
