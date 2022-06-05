@@ -41,6 +41,22 @@ char* read_block(char* path) {
   return path;
 }
 
+/* This function return a dynamically allocated pointer
+It is up to the caller to free it */
+char* get_html_path(const char* root_path, const char* html_name) {
+  char *req_path;
+  int path_len = sizeof(char) * (strlen(html_name) + strlen(root_path) + 1);
+  if ((req_path = malloc(path_len)) != NULL ) {
+    req_path[0] = '\0';
+    strcat(req_path, root_path);
+    strcat(req_path, html_name);
+    return req_path;
+  } else {
+    perror("failed to allocate memory");
+    return NULL;
+  }
+}
+
 
 int main(int argc, char const *argv[]) {
   printf("Content-type: text/html\n\r\n\r");
@@ -48,17 +64,18 @@ int main(int argc, char const *argv[]) {
   const char extention[] = ".html";
   char *endOfPath;
   endOfPath = &configAddress[strlen(configAddress)];
-  char *address;
   char *keyWordStart;
   char *keyWordEnd;
 
   int endOfLine = 1;
   int keyWordLen;
 
-  //  const char toRoot[] = "../"; --> for local debuginf purposes
+  //  const char toRoot[] = "../"; --> for local debuging purposes
+  char *address;
   if ((address = malloc(sizeof(char) * (
-  strlen(getenv("SCRIPT_NAME")) + strlen(getenv("DOCUMENT_ROOT") + 1)
-  ))) != NULL) {
+    strlen(getenv("SCRIPT_NAME")) + strlen(getenv("DOCUMENT_ROOT")) + 1
+  )
+  )) != NULL) {
     address[0] = '\0';
     strcat(address, getenv("DOCUMENT_ROOT"));
     strcat(address, getenv("SCRIPT_NAME"));
@@ -66,7 +83,7 @@ int main(int argc, char const *argv[]) {
     perror("failed to allocate memory");
     return 3;
   }
-  // printf("%s\n", address); --> for local debuginf purposes
+  // printf("%s\n", address); --> for local debuging purposes
 
   char line[256];
   FILE* subject = fopen(address, "r");
