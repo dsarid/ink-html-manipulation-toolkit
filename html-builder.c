@@ -71,18 +71,7 @@ int main(int argc, char const *argv[]) {
   int keyWordLen;
 
   //  const char toRoot[] = "../"; --> for local debuging purposes
-  char *address;
-  if ((address = malloc(sizeof(char) * (
-    strlen(getenv("SCRIPT_NAME")) + strlen(getenv("DOCUMENT_ROOT")) + 1
-  )
-  )) != NULL) {
-    address[0] = '\0';
-    strcat(address, getenv("DOCUMENT_ROOT"));
-    strcat(address, getenv("SCRIPT_NAME"));
-  } else {
-    perror("failed to allocate memory");
-    return 3;
-  }
+  char *address = get_html_path(getenv("DOCUMENT_ROOT"), getenv("SCRIPT_NAME"));
   // printf("%s\n", address); --> for local debuging purposes
 
   char line[256];
