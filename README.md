@@ -12,11 +12,13 @@ I may add later
 
 ## Installation
 ### for server usage:
-Simply compile with:
+Clone/download the source file, change directory to where save it, and simpley run the make command
 ```code
-gcc /path/to/the/source/ -o nameo-of-your-choice
+$ cd the/path/ro/where/you/saved/the/files
+$ make
+make clean # otional, used to auto delete any .o file that may been made dring the compilation)
 ```
-Then you need to create the directory: /etc/html-blocks
+Then, as root you need to create the directory: /etc/html-blocks.
 Inside this directory you need to put your html blocks with .html extension (for example: haeder.html, nav.html, footer.html)
 
 Last thing you need to do is to configure your web server to call this program for every request that end with .html extension
