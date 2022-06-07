@@ -10,7 +10,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "ink-hmtk.h"
+#include "ink-html.h"
 
 /*
   TODO:

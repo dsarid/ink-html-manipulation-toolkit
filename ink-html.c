@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "ink-hmtk.h"
+#include "ink-html.h"
 
 const char extention[] = ".html";
 

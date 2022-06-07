@@ -2,7 +2,7 @@
 # Ink HTML Manipulation Toolkit
 
 ## Description
-A  package of programs for server-side usage, made in c and cgi.
+A package of programs for server-side usage, made in c and cgi.
 
 For now the only feature it has is linking blocks of HTML code into the HTML file requested by htttp
 
@@ -12,7 +12,7 @@ I may add later
 
 ## Installation
 ### for server usage:
-Clone/download the source file, change directory to where save it, and simpley run the make command
+Clone/download the source file, change directory to where you saved it, and simpley run the make command
 ```code
 $ cd the/path/ro/where/you/saved/the/files
 $ make
@@ -24,28 +24,28 @@ Inside this directory you need to put your html blocks with .html extension (for
 Last thing you need to do is to configure your web server to call this program for every request that end with .html extension
 
 ## Usage
-Inside your website's html files, whenever you want to insert one of the blocks you made insert a line formated like this:
+Inside your website's html files, whenever you want to insert one of the blocks you made, insert a line formated like this:
 ```code
 <!-- @@ "name-of-the-block" -->
 ```
 Do not include the file extension.
 
 ## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+For support you can open an issue here, or contact via email
 
 ## Roadmap
 I am plannig to add a bunch of stuff! too many in fact.
 
 ## Contributing
-DISCLAMER: I made this project mainly for my own learning and practing purposes.
-Therefore, this code may not be the best to contribute to, let alone use in production.
+DISCLAMER: I made this project mainly for my own learning and practicing purposes.
+Therefore this code may not be the best to contribute to, let alone use in production.
 But I appreachiate your interest nonetheless!
 
 I accept contribution, it would be better if you contact me before sending a pull request,
 but eitherway I'd review your submission and decide if I want to add it to the project or not.
 
-This program in its final form designed to work only with web-servers. If you stil want to debug it without a web-server
-you need to replace the get_env() calls with argv[] calls and make sure that you make a valid path to a directory that mimc the use of /etc/html-blocks/ (or make one as root)
+This program in its final form designed to work only with web-servers. If you still want to debug it without a web-server
+you need to replace the get_env() calls with argv[] parameters and make sure that you make a valid path to a directory that mimc the use of /etc/html-blocks/ (or make one as root)
 
 ## Authors and acknowledgment
 I'll add later
@@ -58,4 +58,4 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
  You should have received a copy of the GNU Affero General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Project status
-This project is in active development
+This project is in active development.
