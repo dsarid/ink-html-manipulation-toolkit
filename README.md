@@ -26,7 +26,7 @@ Last thing you need to do is to configure your web server to call this program f
 ## Usage
 Inside your website's html files, whenever you want to insert one of the blocks you made, insert a line formated like this:
 ```code
-<!-- @@ "name-of-the-block" -->
+<!-- @@ /"name-of-the-block"/ -->
 ```
 Do not include the file extension.
 

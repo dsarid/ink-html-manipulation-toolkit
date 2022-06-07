@@ -56,10 +56,10 @@ int main(int argc, char const *argv[]) {
       if ( strstr(line, "<!--") &&
         strstr(line, "@@") &&
         strstr(line, "-->") &&
-        (keyWordStart = strstr(line, "\"" ))
+        (keyWordStart = strstr(line, "/\"" )) &&
+        (keyWordEnd = strstr(keyWordStart, "\"/"))
       ) {
-        ++keyWordStart;
-        keyWordEnd = strstr(keyWordStart, "\"");
+        keyWordStart += 2;
         *keyWordEnd = '\0';
         keyWordLen = keyWordEnd - keyWordStart;
         if (keyWordLen > 32) {
