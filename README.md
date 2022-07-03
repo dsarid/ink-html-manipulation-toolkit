@@ -16,7 +16,7 @@ Clone/download the source file, change directory to where you saved it, and simp
 ```code
 $ cd the/path/ro/where/you/saved/the/files
 $ make
-make clean # otional, used to auto delete any .o file that may been made dring the compilation)
+make clean # otional, used to auto delete any .o file that may been made during the compilation)
 ```
 Then, as root you need to create the directory: /etc/html-blocks.
 Inside this directory you need to put your html blocks with .html extension (for example: haeder.html, nav.html, footer.html)
